@@ -73,8 +73,6 @@ console.log(dollar)
 
 
 //3
-// var total = bestPeople.reduce()
-
 var total = bestPeople.reduce(function(summ, people) {
     return summ + people.salary;
   }, 0);
