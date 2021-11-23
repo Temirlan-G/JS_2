@@ -1,15 +1,13 @@
 //HW1
+//1
+let name = prompt('Укажите имя');
+let surname = prompt('Укажите фамилию');
+alert('Приветствую ' + name + ' '+ surname + '!')
+console.log('Приветствую ' + name + ' '+ surname + '!')
 
-// let name = prompt('Укажите имя');
-// let surname = prompt('Укажите фамилию');
-// alert('Приветствую ' + name + ' '+ surname + '!')
-// console.log('Приветствую ' + name + ' '+ surname + '!')
-
+//2
 let number0 = 2189855.456;
 let number1 = 2135135.01;
-
-// number0 = 2135135.01
-// number1 = 555652897
 
 if (number0 < number1) {
     console.log(number1 + ' больше чем ' + number0)
@@ -19,11 +17,8 @@ if (number0 < number1) {
     console.log(number0 + ' больше чем ' + number1)
 }
 
-// var age = prompt('укажи возраст')
-let age = 22;
-// age = 17
-// age = 15
-
+//3
+const age = prompt('укажи возраст')
 
 if (age <= 16) {
     alert('Ты школьник')
@@ -33,15 +28,16 @@ if (age <= 16) {
     alert('Ты либо студент, либо работаешь')
 }
 
-
 //HW2
 // 1
 const arr = [1232, -132, 356, 2123, 2.5, 23, 12];
-let sum = 0
-for (let i = 0; i < arr.length; i++) {
-    sum += arr[i]
+
+const sum = (...numbers) => {
+    let sum = 0
+    numbers.forEach(num => sum += num)
+    return sum
 }
-console.log(sum)
+console.log(sum(...arr))
 
 //2
 for (let i = 2; i < 100; i++) {
@@ -77,7 +73,6 @@ for (let i = 0; i < people.length; i++) {
 }
 // console.log(people)
 
-
 //4
 for (let i = 0; i < people.length; i++) {
     if (people[i].salary <= 20000) {
@@ -87,14 +82,11 @@ for (let i = 0; i < people.length; i++) {
     } else people[i].level = "senior"
 }
 
-
 console.log(people)
 
-
 //HW3
-
 //1
-function min(num1, num2) {
+const min = (num1, num2) => {
     if (num1 < num2) {
         console.log(num1)
     } else {
@@ -104,21 +96,16 @@ function min(num1, num2) {
 
 min(4651, 4532)
 
-
 //2
-function countChar(word, letter) {
-    let splt = word.split('')
-    let s = ''
-    for (let i = 0; i < splt.length; i++) {
-        if (splt[i] === letter) {
-            s += splt[i]
-        }
+const countChar = (word, letter) => {
+    let counter = ''
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] === letter) counter += word[i]
     }
-    console.log(s.length)
+    console.log(counter.length)
 }
 
 countChar('AaaHHHhhhHKKKKKkkkkkkSSSSsss', 'a')
-
 
 //3
 let products = [
@@ -136,12 +123,10 @@ let products = [
     },
 ]
 
-function addProduct(productName, cost) {
-    products.push({
-        productName: productName,
-        cost: cost,
-    })
-}
+const addProduct = (productName, cost) => products.push({
+    productName: productName,
+    cost: cost,
+})
 
 addProduct('cookies', 5)
 addProduct('candies', 7)
@@ -200,18 +185,6 @@ let bestPeople = [
 ]
 
 //1
-
-// function filterName(names) {
-//     if (names.name.substr(0,1) === 'S') {
-//         return true
-//     }
-//     return false
-// }
-//
-// var nameWithS = bestPeople.filter(filterName)
-//
-// console.log(nameWithS)
-
 const s = bestPeople.filter(people => people.name.substr(0, 1) === 'S');
 console.log(s)
 
